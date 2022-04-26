@@ -36,17 +36,17 @@ describe('App inital page load', () => {
   })
 
   it('should display the user\'s input on the DOM after submitting the form', () => {
-    cy.intercept('POST', 'http://localhost:3001/api/v1/urls', {
-      statusCode: 201,
-      fixture: 'postfixture.json'
-    })
     cy.get('form input[placeholder="Title..."]')
       .type('Geena is awesome')
     cy.get('form input[placeholder="URL to Shorten..."]')
       .type('URL to shorten')
+      cy.intercept('POST', 'http://localhost:3001/api/v1/urls', {
+        statusCode: 201,
+        fixture: 'postfixture.json'
+      })
     cy.get('button')
       .click()
-    cy.get('h3').last()
+    cy.get('h3')
       .contains('Geena is awesome')
   })
 })
