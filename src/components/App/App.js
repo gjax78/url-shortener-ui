@@ -18,6 +18,7 @@ const App = () => {
 
   const addUrl = (newUrl) => {
     fetchAPI.postNewUrls(newUrl)
+    fetchData()
     setUrls([...urls, newUrl])
   }
 
