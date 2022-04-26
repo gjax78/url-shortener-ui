@@ -1,0 +1,10 @@
+{
+"urls": [
+{
+"id": 1,
+"long_url": "URL to shorten",
+"short_url": "http://localhost:3001/useshorturl/2",
+"title": "Geena is awesome"
+}
+]
+}
