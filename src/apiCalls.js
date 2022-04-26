@@ -9,6 +9,19 @@ const fetchAPI = {
         return response.json()
       }
     })
+  },
+
+  postNewUrls(newUrl) {
+    return fetch('', {
+      method: 'POST',
+      body: JSON.stringify(newUrl),
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(response => {
+      if(!response.ok) {
+        return response.json()
+      }
+    })
   }
 }
 
