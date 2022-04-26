@@ -9,8 +9,12 @@ const UrlForm = ({addUrl}) => {
     setTitle(e.target.value);
   }
 
-  const handleUrlChange = e => {
+  const handleUrlChange = (e) => {
     setUrlToShorten(e.target.value);
+  }
+
+  const handleShortenUrlChange = (newUrl) => {
+    setShortUrl(newUrl)
   }
 
   const handleSubmit = e => {
@@ -19,7 +23,7 @@ const UrlForm = ({addUrl}) => {
       id: Date.now(),
       title: title,
       long_url: urlToShorten,
-      short_url: newUrl
+      short_url: shortUrl
     }
     addUrl(newUrl)
     clearInputs();
