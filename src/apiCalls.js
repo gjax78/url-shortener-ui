@@ -4,7 +4,7 @@ const fetchAPI = {
     return fetch('http://localhost:3001/api/v1/urls')
     .then(response => {
       if (!response.ok) {
-        throw new Error('Cannot load ideas!')
+        throw new Error('Cannot load Urls!')
       } else {
         return response.json()
       }
@@ -12,7 +12,7 @@ const fetchAPI = {
   },
 
   postNewUrls(newUrl) {
-    return fetch('', {
+    return fetch('http://localhost:3001/api/v1/urls', {
       method: 'POST',
       body: JSON.stringify(newUrl),
       headers: {'Content-Type': 'application/json'}

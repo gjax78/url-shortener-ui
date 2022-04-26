@@ -16,11 +16,16 @@ const App = () => {
     fetchData()
   }, [])
 
+  const addUrl = (newUrl) => {
+    fetchAPI.postNewUrls(newUrl)
+    setUrls([...urls, newUrl])
+  }
+
     return (
       <main className="App">
         <header>
           <h1>URL Shortener</h1>
-          <UrlForm />
+          <UrlForm addUrl={addUrl}/>
         </header>
 
         <UrlContainer urls={urls}/>
