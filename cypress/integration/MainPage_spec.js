@@ -27,4 +27,11 @@ describe('App inital page load', () => {
     cy.get('form input[placeholder="URL to Shorten..."]')
       .get('form input[type="text"]')
   })
+
+  it('should allow the user to fill out the form and the form contains the user input', () => {
+    cy.get('form input[placeholder="Title..."]')
+      .type('Geena is awesome')
+    cy.get('form input[placeholder="URL to Shorten..."]')
+      .type('URL to shorten')
+  })
 })
