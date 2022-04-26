@@ -20,4 +20,11 @@ describe('App inital page load', () => {
     cy.get('p')
       .should('have.text', 'https://images.unsplash.com/photo-1531898418865-480b7090470f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
   })
+
+  it('should display the form with the proper inputs', () => {
+    cy.get('form input[placeholder="Title..."]')
+      .get('form input[type="text"]')
+    cy.get('form input[placeholder="URL to Shorten..."]')
+      .get('form input[type="text"]')
+  })
 })
