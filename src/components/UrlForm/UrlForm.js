@@ -3,27 +3,25 @@ import React, { useState } from 'react';
 const UrlForm = ({addUrl}) => {
   const [title, setTitle] = useState('')
   const [urlToShorten, setUrlToShorten] = useState('')
-  const [shortUrl, setShortUrl] = useState('')
+  // const [shortUrl, setShortUrl] = useState('')
 
   const handleTitleChange = e => {
     setTitle(e.target.value);
   }
 
   const handleUrlChange = (e) => {
-    setUrlToShorten(e.target.value);
+    setUrlToShorten(e.target.value)
   }
 
-  const handleShortenUrlChange = (newUrl) => {
-    setShortUrl(newUrl)
-  }
+  // const handleShortenUrlChange = (newUrl) => {
+  //   setShortUrl(newUrl)
+  // }
 
   const handleSubmit = e => {
     e.preventDefault();
     const newUrl = {
-      id: Date.now(),
       title: title,
-      long_url: urlToShorten,
-      short_url: shortUrl
+      long_url: urlToShorten
     }
     addUrl(newUrl)
     clearInputs();
