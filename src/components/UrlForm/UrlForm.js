@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const UrlForm = ({addUrl}) => {
   const [title, setTitle] = useState('')
   const [urlToShorten, setUrlToShorten] = useState('')
+  const [shortUrl, setShortUrl] = useState('')
 
   const handleTitleChange = e => {
     setTitle(e.target.value);
@@ -17,12 +18,12 @@ const UrlForm = ({addUrl}) => {
     const newUrl = {
       id: Date.now(),
       title: title,
-      long_url: urlToShorten
+      long_url: urlToShorten,
+      short_url: newUrl
     }
     addUrl(newUrl)
     clearInputs();
   }
-
 
   const clearInputs = () => {
     setTitle('')
